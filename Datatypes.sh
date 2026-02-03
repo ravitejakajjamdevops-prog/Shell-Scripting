@@ -7,4 +7,4 @@ echo "Sum is $sum"
 # array
 
 Fruits=("apple","banana","Orange")
-echo "Fruitd are $Fruits"
+echo "Fruitd are $Fruits[1]"
