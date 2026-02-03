@@ -1,6 +1,6 @@
 #!/bin/bash
 id=$(id -u)
-if [ $id -ne 0 ]
+if [ $id -ne 0 ];then
     echo "Pease run this with root user"
 fi
 
