@@ -1,7 +1,5 @@
 #!/bin/bash
-
-if ( 25 -lt 30)
-    echo "25 is less than 30 "
-elif
-     echo " grater than 30"
+Number1=20
+if ( $Number -lt 30)
+    echo "Given number is less than 30 "
 fi    
