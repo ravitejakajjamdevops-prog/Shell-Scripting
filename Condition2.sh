@@ -6,3 +6,9 @@ if [ $id -ne 0 ];then
 fi
 
 dnf install nginx -y
+
+if [ $? -ne 0 ] ; then
+    echo " Installing nginx ...Failure"
+else
+    echo "Installing nginx....success"
+fi
