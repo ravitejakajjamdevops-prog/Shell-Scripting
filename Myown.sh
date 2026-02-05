@@ -1,4 +1,4 @@
 #!/bin/bash
-Number=33
+Number=34
 Rem=($Number)/2
 echo "Reminder is $Rem"
