@@ -5,18 +5,21 @@ if [ $id -ne 0 ];then
     exit 1
 fi
 
+Validation (){
+    if [ $1 -ne 0 ] ; then
+        echo "$2 ...Failure"
+        exit 1
+    else
+        echo "$2....success"
+    fi
+
+}
+
 dnf install nginx -y
 
-if [ $? -ne 0 ] ; then
-    echo " Installing nginx ...Failure"
-else
-    echo "Installing nginx....success"
-fi
+Validation $? "Installing Nginx"
 
 dnf install mysql -y
 
-if [ $? -ne 0 ];then
-    echo "Installing Nginx... Failure"
-else
-    echo "Installing Nginx ....Success"
-fi
+Validation $? "Installing Mysql"
+
