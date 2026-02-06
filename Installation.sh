@@ -18,11 +18,9 @@ Validation (){
 
 }
 
-dnf install nginx -y &>> $LOGS_FILE
+for package in $@
+do 
+    dnf install $package -y &>> $LOGS_FILE
+    Validation $? "Installing $package" 
 
-Validation $? "Installing Nginx"
-
-dnf install mysql -y & >> $LOGS_FILE
-
-Validation $? "Installing Mysql"
-
+done
