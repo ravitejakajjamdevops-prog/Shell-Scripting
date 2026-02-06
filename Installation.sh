@@ -20,7 +20,7 @@ Validation (){
 
 for package in $@
 do 
-    dnf list $package installed
+    dnf list  installed $package
     if [ $? -ne 0 ];then
         echo "$package is not present...installing now"
         dnf install $package -y &>> $LOGS_FILE
