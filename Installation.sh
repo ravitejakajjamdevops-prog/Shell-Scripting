@@ -1,4 +1,7 @@
 #!/bin/bash
+LOGS_FOLDER=/var/log/shell-scripting
+LOGS_FILE=/var/log/shell-scripting/$0.log
+mkdir -p /var/log/shell-scripting
 id=$(id -u)
 if [ $id -ne 0 ];then
     echo "Pease run this with root user"
@@ -15,11 +18,11 @@ Validation (){
 
 }
 
-dnf install nginx -y
+dnf install nginx -y &>> $LOGS_FILE
 
 Validation $? "Installing Nginx"
 
-dnf install mysql -y
+dnf install mysql -y & >> $LOGS_FILE
 
 Validation $? "Installing Mysql"
 
