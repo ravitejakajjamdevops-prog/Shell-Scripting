@@ -20,7 +20,14 @@ Validation (){
 
 for package in $@
 do 
-    dnf install $package -y &>> $LOGS_FILE
-    Validation $? "Installing $package" 
+    dnf list $package installed
+    if [ $? -ne 0 ];then
+        echo "$package is not present...installing now"
+        dnf install $package -y &>> $LOGS_FILE
+        Validation $? "Installing $package" 
+    else
+            echo "Package already installed....Skipping"
+            exit 1
+    fi
 
 done
