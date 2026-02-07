@@ -2,7 +2,7 @@
 AMI_Id=ami-0220d79f3f480ecf5
 SG_ID=sg-03773a885c8092230
 
-for instance in $a
+for instance in $@
 do
     Instance_ID=$( aws ec2 run-instances \
     --image-id $AMI_Id \
