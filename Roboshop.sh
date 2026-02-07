@@ -21,7 +21,7 @@ do
     else
         IP=$( 
             aws ec2 describe-instances \
- 	        --instance-ids $Instance_ID \ 
+ 	        --instance-ids $Instance_ID \
 	        --query 'Reservations[*].Instances[*].PrivateIpAddress' \
 	        --output text
 
