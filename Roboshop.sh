@@ -6,9 +6,9 @@ for instance in $a
 do
     Instance_ID = $( aws ec2 run-instances \
     --image-id $AMI_Id \
-    --instance-type t3.micro \
+    --instance-type "t3.micro" \
     --security-group-ids $SG_ID \
-    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=$instance}]' \
+    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$instance}]" \
     --query 'Instances[0].InstanceID' \
     --output text )
     if [ $instance == "frontend" ];then
