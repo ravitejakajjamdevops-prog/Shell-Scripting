@@ -1,0 +1,26 @@
+#!/bin/bash
+AMI_Id=ami-0220d79f3f480ecf5
+SG_ID=sg-03773a885c8092230
+
+for instance in $a
+do
+    Instance_ID = $(aws ec2 run-instances \
+    --image-id $AMI_ID \
+    --instance-type t3.micro \
+    --security-group-ids $SG_ID \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=$instance}]' \
+    --query 'Instances[0].InstanceID' \
+    --output text)
+    if [ $instance == "frontend" ];then
+        aws ec2 describe-instances
+ 	        --instance-ids $Instance_ID
+	        --query 'Reservations[*].Instances[*].PublicIpAddress' 
+	        --output text
+    else
+        aws ec2 describe-instances
+ 	        --instance-ids $Instance_ID
+	        --query 'Reservations[*].Instances[*].PrivateIpAddress' 
+	        --output text
+
+    fi
+done    
