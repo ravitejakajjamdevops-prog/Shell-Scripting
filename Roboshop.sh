@@ -2,7 +2,7 @@
 AMI_Id=ami-0220d79f3f480ecf5
 SG_ID=sg-03773a885c8092230
 ZONE_ID=Z07830142KGV9AKQPOKXW
-$DOMAIN_NAME=kajjam.online
+DOMAIN_NAME=kajjam.online
 
 for instance in $@
 do
