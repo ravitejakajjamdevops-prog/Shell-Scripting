@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 LOGS_FOLDER=/var/log/shell-Roboshop
 LOGS_FILE=/var/log/shell-Roboshop/$0.log
 mkdir -p /var/log/shell-Roboshop
