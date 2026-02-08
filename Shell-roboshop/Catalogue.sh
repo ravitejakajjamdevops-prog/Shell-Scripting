@@ -33,7 +33,7 @@ else
     echo "User roboshop already exists"
 fi
 
-mkdir /app 
+mkdir -p /app 
 Validation $? "Creating app directory"
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
 Validation $? "Downloading Catalogue code"
@@ -43,6 +43,7 @@ cd /app
 npm install 
 
 cp /home/ec2-user/Shell-Scripting/Shell-roboshop/Catalogue.service /etc/systemd/system
+Validation $? "Copying Catalogue systemctl"
 
 systemctl daemon-reload
 
