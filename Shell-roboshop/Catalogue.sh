@@ -37,7 +37,8 @@ mkdir -p /app
 Validation $? "Creating app directory"
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
 Validation $? "Downloading Catalogue code"
-cd /app 
+cd /app
+rm -rf /app/*
 unzip /tmp/catalogue.zip
 cd /app 
 npm install 
@@ -50,11 +51,11 @@ systemctl daemon-reload
 systemctl enable catalogue 
 systemctl start catalogue
 
-# cp mongo.repo /etc/yum.repos.d/
+cp /home/ec2-user/Shell-Scripting/Shell-roboshop/mongo.repo /etc/yum.repos.d/
 
-# dnf install mongodb-mongosh -y
+dnf install mongodb-mongosh -y
 
-# mongosh --host mongodb.kajjam.online </app/db/master-data.js
+mongosh --host mongodb.kajjam.online </app/db/master-data.js
 
 
 
