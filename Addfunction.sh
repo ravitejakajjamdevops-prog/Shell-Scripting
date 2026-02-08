@@ -1,9 +1,10 @@
 #!/bin/bash
-
+Num1=10
+Num2=30
 add(){
 
     Sum=$(( $1 + $2 ))
     echo "Sum is $Sum"
 }
 
-add 10 20;
+add Num1 Num2;
