@@ -42,7 +42,7 @@ unzip /tmp/catalogue.zip
 cd /app 
 npm install 
 
-cp Catalogue.service /etc/systemd/system
+cp /home/ec2-user/Shell-Scripting/Shell-roboshop/Catalogue.service /etc/systemd/system
 
 systemctl daemon-reload
 
