@@ -2,7 +2,7 @@
 
 add(){
 
-    Sum=( $1 + $2 )
+    Sum=$( $1 + $2 )
     echo "Sum is $Sum"
 }
 
